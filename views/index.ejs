@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link type="icon" rel="stylesheet" href="Assets/icon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <%- include('./partials/navBar') %>
+    <div class="container index-container">
+      <h1>Welcome to quickPound <span> <%= name %></span></h1>
+      <button><a href="post">Let's go</a></button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      M.Sidenav.init(document.querySelector(".sidenav"));
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+
+<%- include('./partials/header') -%>
+<div class="container">
+  <div class="">
+      <div class="">
+          <div class="profile-header">
+            <div class="profile-info">
+              <p class="name"><%= user.displayName %></p>
+             <p>Joined <%- joinDate(user.createdAt) %></p>
+            </div>
+            <img src="<%= user.image %>" class="profile-img"alt=""> 
+          </div>
+
+          <!-- Add Post -->
+          <div class="addPost">
+            <h2>Add a post</h2>
+            <form action="/post/createPost" class="make-post" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+               <div class="mb-3">
+                <label for="caption" class="form-label">Caption</label>
+                <textarea class="form-control" id="caption" name="caption"></textarea>
+              </div>
+             
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <div class="col-6">
+        <ul class="post-grid" role="list">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <div class="">
+          <a class="btn" href="/post">Return to Feed</a>
+        </div>  
+
+        <a href="/logout" class="">Logout</a>
+      </div>  
+    </div>
+  </div>
+</div>
+<!-- <%- include('partials/footer') -%> -->

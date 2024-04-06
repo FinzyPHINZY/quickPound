@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryBooks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class=""><%- include('../partials/navBar.ejs') %></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m8">
+          <h3><%= note.title %></h3>
+          <div class="card story">
+            <div class="card-content">
+              <span class="card-title"><%- formatDate( note.createdAt) %></span>
+              <%- note.body %>
+            </div>
+          </div>
+          <div class="row">
+            <a href="/notes/edit/<%= note._id  %>" class="btn green">Edit</a>
+            <a href="/notes" class="btn orange">Back</a>
+            <!-- To be Implemented: delete from show page -->
+            <!-- <form
+              action="/notes/delete/<%= note._id %>"
+              method="post"
+              id="delete-form"
+            >
+              <input type="hidden" name="_method" value="DELETE" />
+              <button type="submit" class="btn-red">
+                <i class="fas fa-trash"></i>
+              </button>
+            </form> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      M.Sidenav.init(document.querySelector(".sidenav"));
+    </script>
+  </body>
+</html>

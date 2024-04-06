@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Box sizing rules */
+/* Remove default margin */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #1d4ed8;
+  --color-secondary: #27ae60;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey0: #f8f8f8;
+  --color-grey-1: #dbe1e8;
+  --color-grey-2: #b2becd;
+  --color-grey-3: #6c7983;
+  --color-grey-4: #454e56;
+  --color-grey-5: #2a2e35;
+  --color-grey-6: #12181b;
+  --br-sm-2: 14px;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 2);
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  background: #020617;
+  color: var(--color-primary);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility Classes */
+.container {
+  width: 950px;
+  max-width: 90%;
+  margin: 0 auto;
+  /* padding: 10px; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  box-shadow: 0 5px 10px rgba(230, 228, 228, 0.2);
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.header > * {
+  cursor: pointer;
+}
+
+.index-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+}
+
+.profile-info .name {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.profile-img {
+  border: 2px solid magenta;
+  border-radius: 50%;
+  width: 200px;
+}
+form input,
+form textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: none;
+  background: var(--color-grey-5);
+  color: var(--color-white);
+  width: 100%;
+  resize: none;
+}
+
+.btn-primary {
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: 1px solid red;
+}
+
+.addPost h2 {
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+
+.make-post > * {
+  margin-bottom: 0.7rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.post-box {
+  /* border: 2px solid lime; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.post-img-like {
+  border: 1px solid burlywood;
+}
+
+.post-img-like img {
+  width: 100%;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+}
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fa {
+  font-size: 2rem;
+  padding: 10px;
+  background: var(--color-primary);
+}
+
+.caption {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-grey-2);
+  padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .post-grid,
+  .post-box {
+    grid-template-columns: 1fr;
+  }
+}
