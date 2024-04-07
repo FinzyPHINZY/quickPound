@@ -20,6 +20,7 @@ require("./config/passport.js")(passport);
 
 connectDB();
 
+app.set("trust proxy", true);
 app.set("view engine", "ejs");
 app.use(morgan("dev"));
 app.use(express.static("public"));
