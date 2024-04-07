@@ -29,9 +29,9 @@
           </div>
       </div>
       <div class="col-6">
-        <ul class="post-grid" role="list">
+        <ul class="feed" role="list">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="">
+          <li class="feed-post">
             <a href="/post/<%= posts[i]._id%>">
               <img class="img-fluid" src="<%= posts[i].image%>">
             </a>
